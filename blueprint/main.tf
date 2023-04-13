@@ -110,7 +110,7 @@ resource "genesyscloud_telephony_providers_edges_did_pool" "mec_number" {
 resource "genesyscloud_architect_ivr" "mec_mysimple_ivr" {
   name               = "A simple IVR"
   description        = "A sample IVR configuration"
-  dnis               = ["var.my_ivr_did_number, var.my_ivr_did_number]
+  dnis               = [var.my_ivr_did_number, var.my_ivr_did_number]
   open_hours_flow_id = genesyscloud_flow.mec_mysimpleflow.id
   depends_on         = [
     genesyscloud_flow.mec_mysimpleflow,
