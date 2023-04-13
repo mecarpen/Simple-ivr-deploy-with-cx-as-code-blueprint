@@ -100,9 +100,9 @@ resource "genesyscloud_flow" "mec_mysimpleflow" {
 }
 
 
-resource "genesyscloud_telephony_providers_edges_did_pool" "mec_mygcv_number" {
-  start_phone_number = "+16783656524"
-  end_phone_number   = "+16783656524"
+resource "genesyscloud_telephony_providers_edges_did_pool" "mec_number" {
+  start_phone_number = var.my_ivr_did_number
+  end_phone_number   = var.my_ivr_did_number
   description        = "GCV Number for inbound calls"
   comments           = "Additional comments"
 }
@@ -110,11 +110,11 @@ resource "genesyscloud_telephony_providers_edges_did_pool" "mec_mygcv_number" {
 resource "genesyscloud_architect_ivr" "mec_mysimple_ivr" {
   name               = "A simple IVR"
   description        = "A sample IVR configuration"
-  dnis               = ["+16783656525", "+16783656525"]
+  dnis               = ["var.my_ivr_did_number, var.my_ivr_did_number]
   open_hours_flow_id = genesyscloud_flow.mec_mysimpleflow.id
   depends_on         = [
     genesyscloud_flow.mec_mysimpleflow,
-    genesyscloud_telephony_providers_edges_did_pool.mygcv_number
+    genesyscloud_telephony_providers_edges_did_pool.number
   ]
 }
 
