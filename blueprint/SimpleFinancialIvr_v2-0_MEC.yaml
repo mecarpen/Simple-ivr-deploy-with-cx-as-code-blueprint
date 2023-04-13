@@ -1,5 +1,5 @@
 inboundCall:
-  name: SimpleFinancialIvr
+  name: MEC_SimpleFinancialIvr
   description: SimpleFinancialIvr
   division: Home
   startUpRef: "/inboundCall/menus/menu[Main Menu_10]"
