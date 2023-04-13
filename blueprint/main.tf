@@ -84,12 +84,12 @@ resource "genesyscloud_routing_queue" "mec_queue_K401" {
   enable_transcription     = true
   enable_manual_assignment = true
   members {
-    user_id  = genesyscloud_user.sf_johnsmith.id
+    user_id  = genesyscloud_user.mec_johnsmith.id
     ring_num = 1
   }
 
   members {
-    user_id  = genesyscloud_user.sf_janesmith.id
+    user_id  = genesyscloud_user.mec_janesmith.id
     ring_num = 1
   }
 }
@@ -111,9 +111,9 @@ resource "genesyscloud_architect_ivr" "mec_mysimple_ivr" {
   name               = "A simple IVR"
   description        = "A sample IVR configuration"
   dnis               = ["+16783656525", "+16783656525"]
-  open_hours_flow_id = genesyscloud_flow.mysimpleflow.id
+  open_hours_flow_id = genesyscloud_flow.mec_mysimpleflow.id
   depends_on         = [
-    genesyscloud_flow.mysimpleflow,
+    genesyscloud_flow.mec_mysimpleflow,
     genesyscloud_telephony_providers_edges_did_pool.mygcv_number
   ]
 }
