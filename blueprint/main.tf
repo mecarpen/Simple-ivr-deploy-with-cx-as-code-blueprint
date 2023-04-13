@@ -10,7 +10,7 @@ provider "genesyscloud" {
   sdk_debug = true
 }
 
-resource "genesyscloud_user" "sf_johnsmith" {
+resource "genesyscloud_user" "mec_johnsmith" {
   email           = "john.smith@complexfinancial.com"
   name            = "John Smith"
   password        = "b@Zinga1972"
@@ -34,7 +34,7 @@ resource "genesyscloud_user" "sf_johnsmith" {
   }
 }
 
-resource "genesyscloud_user" "sf_janesmith" {
+resource "genesyscloud_user" "mec_janesmith" {
   email           = "jane.smith@complexfinancial.com"
   name            = "Jane Smith"
   password        = "b@Zinga1972"
@@ -69,7 +69,7 @@ resource "genesyscloud_routing_queue" "mec_queue_ira" {
   enable_manual_assignment = true
 
   members {
-    user_id  = genesyscloud_user.sf_johnsmith.id
+    user_id  = genesyscloud_user.mec_johnsmith.id
     ring_num = 1
   }
 }
@@ -95,8 +95,8 @@ resource "genesyscloud_routing_queue" "mec_queue_K401" {
 }
 
 resource "genesyscloud_flow" "mec_mysimpleflow" {
-  filepath = "./SimpleFinancialIvr_v2-0.yaml"
-  file_content_hash = filesha256("./SimpleFinancialIvr_v2-0.yaml") 
+  filepath = "./SimpleFinancialIvr_v2-0_MEC.yaml"
+  file_content_hash = filesha256("./SimpleFinancialIvr_v2-0_MEC.yaml") 
 }
 
 
