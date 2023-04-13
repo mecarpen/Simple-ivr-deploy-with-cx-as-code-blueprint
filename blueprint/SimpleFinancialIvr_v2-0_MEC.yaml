@@ -12,7 +12,7 @@ inboundCall:
         defaultEngine:
           voice: Jill
   initialGreeting:
-    tts: Hi welcome to SimpleFinancial.  Please listen to our menu carefully.
+    tts: Hi welcome to Simple Financial.  Please listen to our menu carefully.
   settingsActionDefaults:
     playAudioOnSilence:
       timeout:
