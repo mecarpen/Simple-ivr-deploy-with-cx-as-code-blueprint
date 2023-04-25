@@ -13,6 +13,11 @@ provider "genesyscloud" {
   oauthclient_secret  = "GENESYSCLOUD_OAUTHCLIENT_SECRET"
 }
 
+variable "gcv_mec_number" {
+  type = string
+  description = "Phone number used for my simple IVR"
+}
+
 resource "genesyscloud_user" "mec_johnsmith" {
   email           = "john.smith@complexfinancial.com"
   name            = "John Smith"
