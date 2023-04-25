@@ -117,7 +117,7 @@ resource "genesyscloud_architect_ivr" "mec_mysimple_ivr" {
   open_hours_flow_id = genesyscloud_flow.mec_mysimpleflow.id
   depends_on         = [
     genesyscloud_flow.mec_mysimpleflow,
-    genesyscloud_telephony_providers_edges_did_pool.number
+    genesyscloud_telephony_providers_edges_did_pool.gcv_mec_number
   ]
 }
 
